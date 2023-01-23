@@ -1,14 +1,151 @@
-body {
-    background-color: white;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-}
-
 * {
     /* border: thin solid black; */
 }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    /* border: 0; */
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
 
 .container {
     border-radius: 50px;
@@ -20,7 +157,7 @@ body {
     height: 750px;
     width: 1500px;
     bottom: 150px;
-    top: 140px;
+    top: 90px;
 }
 
 #sidebar-container {
@@ -37,7 +174,9 @@ body {
 }
 
 #search-bar {
-    font-size: large;
+    font-size: 22px;
+    font-weight: 300;
+    color: #eef1ff;
     border-radius: 10px;
     text-align: center;
     width: 100%;
@@ -50,13 +189,13 @@ body {
     width: 100%;
     font-size: 24px;
     margin-top: 30px;
-    letter-spacing: 10px;
-    font-weight: bolder;
+    letter-spacing: 8px;
+    font-weight: 600;
     width: 100%;
 }
 
 #category-filter-container {
-    letter-spacing: normal;
+    letter-spacing: 1px;
     margin-top: 20px;
 }
 
@@ -71,14 +210,95 @@ body {
     bottom: 0;
     padding: 40px;
     width: 75%;
-    font-size: 48px;
-    font-weight: bolder;
 }
 
 .day-filter {
     display: inline-block;
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 60px;
+    line-height: 1;
+}
+
+#day-filter-container {
+    /* border: thin solid black; */
+    height: 50px;
+    vertical-align: center;
 }
 
 #today {
     margin-left: 20px;
+}
+
+.task-container {
+    display: flex;
+}
+
+#tasks-container {
+    margin-top: 50px;
+}
+
+.task-container {
+    display: block;
+}
+
+#category-filter-container {
+    margin-top: 30px;
+}
+
+#personal {
+    display: flex;
+}
+
+#work {
+    display: flex;
+    margin-top: 20px;
+}
+
+.day-filter-values {
+    padding-left: 5px;
+}
+
+
+.task-details {
+    display: inline-flex;
+    margin: 10px 20px 20px 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+input[type="date"],
+input[type="time"] {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    margin: none;
+    border: 2px solid black;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.task-details-container {
+    margin-left: 44px;
+    margin-top: 8px;
+}
+
+.task-radio-label {
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
 }

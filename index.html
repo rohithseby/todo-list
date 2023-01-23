@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <link rel="stylesheet" href="index.css">
     <title>TO-DO List</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://use.typekit.net/hfq7fns.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"> -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet"
@@ -11,7 +13,6 @@
 </head>
 
 <body>
-    <div id="title">TO-DO LIST</div>
     <div id="main-container" class="container">
         <div id="sidebar-container" class="container">
             <input type="text" id="search-bar" placeholder="Search">
@@ -20,18 +21,39 @@
                 <div id="category-filter-container" class="container">
                     <div id="personal"><span class="material-symbols-outlined">
                             palette
-                        </span> Personal</div>
+                        </span>
+                        <span class="day-filter-values">Personal</span>
+                    </div>
                     <div id="work"><span class="material-symbols-outlined">
                             work
-                        </span> Work</div>
+                        </span>
+                        <span class="day-filter-values">Work</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="content-container" class="container">
-            <div id="all" class="day-filter">All</div>
-            <div id="today" class="day-filter">Today</div>
-
+            <div id="day-filter-container">
+                <div id="all" class="day-filter">All</div>
+                <div id="today" class="day-filter">Today</div>
+            </div>
+            <div id="tasks-container">
+                <div id="task1" class="task-container">
+                    <input type="radio" id="task1-radio" class="task-radio" /><label for="task1-radio"
+                        class="task-radio-label">Fry
+                        chicken</label>
+                    <div id="task1-details" class="task-details-container">
+                        <input type="date" id="task1-date" class="task-details task-day">
+                        <input type="time" id="task1-time" class="task-details task-time">
+                        <select name="category-dropdown" id="category-dropdown" class="task-details task-category">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <script src="index.js"></script>
+        <script src="index.js"></script>
 </body>
+
+</html>
