@@ -256,7 +256,7 @@ body {
 }
 
 .day-filter-values {
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
 
@@ -301,4 +301,22 @@ input[type="radio"] {
     font-size: 22px;
     font-weight: 600;
     color: black;
+}
+
+#add-task {
+    border-radius: 50%;
+    background-color: #b1b2ff;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    position: absolute;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    bottom: 40px;
+}
+
+#add-icon {
+    color: white;
+    font-size: 50px;
 }
