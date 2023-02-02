@@ -25,7 +25,6 @@ handleAddTaskClick = () => {
     tasksContainer.innerHTML = currentInnerHTML + taskHTML
     let tasksContainerChildren = Array.from(tasksContainer.children);
     taskIDs = tasksContainerChildren.map(element => { return element.id });
-    console.log(taskIDs)
 }
 
 addTaskButton.addEventListener('click', handleAddTaskClick)
