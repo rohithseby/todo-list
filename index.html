@@ -12,6 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
 </head>
 
 <body>
@@ -24,38 +26,29 @@
                     <div id="personal"><span class="material-symbols-outlined">
                             palette
                         </span>
-                        <span class="day-filter-values">Personal</span>
+                        <span class="category-filter-values">Personal</span>
                     </div>
                     <div id="work"><span class="material-symbols-outlined">
                             work
                         </span>
-                        <span class="day-filter-values">Work</span>
+                        <span class="category-filter-values">Work</span>
                     </div>
                 </div>
             </div>
         </div>
         <div id="content-container" class="container">
             <div id="day-filter-container">
-                <div id="all" class="day-filter">All</div>
-                <div id="today" class="day-filter">Today</div>
+                <div id="all" class="day-filter-values">All</div>
+                <div id="today" class="day-filter-values">Today</div>
             </div>
             <div id="tasks-container">
-                <div id="task1" class="task-container">
-                    <input type="radio" id="task1-radio" class="task-radio" /><label for="task1-radio"
-                        class="task-radio-label">Fry
-                        chicken</label>
-                    <div id="task1-details" class="task-details-container">
-                        <input type="date" id="task1-date" class="task-details task-day">
-                        <input type="time" id="task1-time" class="task-details task-time">
-                        <select name="category-dropdown" id="category-dropdown" class="task-details task-category">
-                            <option value="personal">Personal</option>
-                            <option value="work">Work</option>
-                        </select>
-                    </div>
-                </div>
             </div>
             <div id="add-task"><span id="add-icon" class="material-symbols-outlined">
                     add
+                </span>
+            </div>
+            <div id="delete-task"><span id="delete-icon" class="material-symbols-outlined">
+                    delete
                 </span>
             </div>
         </div>

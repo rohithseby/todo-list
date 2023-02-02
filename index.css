@@ -182,7 +182,9 @@ body {
     width: 100%;
     border: none;
     height: 50px;
+    outline: none;
 }
+
 
 #category-container {
     color: white;
@@ -212,12 +214,16 @@ body {
     width: 75%;
 }
 
-.day-filter {
+.day-filter-values {
     display: inline-block;
     font-size: 60px;
     font-weight: 600;
     margin-bottom: 60px;
     line-height: 1;
+}
+
+.day-filter-values:hover {
+    cursor: pointer;
 }
 
 #day-filter-container {
@@ -230,16 +236,17 @@ body {
     margin-left: 20px;
 }
 
-.task-container {
-    display: flex;
-}
-
 #tasks-container {
+    position: relative;
+    height: 84%;
     margin-top: 50px;
+    overflow-x: 0;
+    overflow-y: auto;
 }
 
 .task-container {
     display: block;
+    margin-bottom: 32px;
 }
 
 #category-filter-container {
@@ -255,10 +262,13 @@ body {
     margin-top: 20px;
 }
 
-.day-filter-values {
+.category-filter-values {
     padding-left: 15px;
 }
 
+.category-filter-values:hover {
+    cursor: pointer;
+}
 
 .task-details {
     display: inline-flex;
@@ -291,16 +301,34 @@ input[type="radio"] {
     background-color: transparent;
 }
 
+input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: black;
+}
+
 .task-details-container {
     margin-left: 44px;
     margin-top: 8px;
 }
 
-.task-radio-label {
+.task-content {
     margin-left: 20px;
     font-size: 22px;
     font-weight: 600;
     color: black;
+}
+
+.delete-button {
+    margin-left: 30px;
+    color: white;
+}
+
+.delete-button:hover {
+    color: lightgrey;
+    cursor: pointer;
 }
 
 #add-task {
@@ -319,4 +347,41 @@ input[type="radio"] {
 #add-icon {
     color: white;
     font-size: 50px;
+}
+
+#add-task:hover {
+    background-color: #c2c3fc;
+    cursor: pointer;
+}
+
+#delete-task {
+    border-radius: 50%;
+    background-color: #b1b2ff;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    position: absolute;
+    right: 160px;
+    justify-content: center;
+    align-items: center;
+    bottom: 40px;
+}
+
+#delete-icon {
+    color: white;
+    font-size: 35px;
+}
+
+#delete-task:hover {
+    background-color: #c2c3fc;
+    cursor: pointer;
+}
+
+.task-content {
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    color: lightgray;
 }
