@@ -291,7 +291,7 @@ input[type="time"] {
     border-radius: 5px;
 }
 
-input[type="radio"] {
+input[type="checkbox"] {
     appearance: none;
     margin: none;
     border: 2px solid black;
@@ -301,11 +301,11 @@ input[type="radio"] {
     background-color: transparent;
 }
 
-input[type="radio"]:hover {
+input[type="checkbox"]:hover {
     cursor: pointer;
 }
 
-input[type="radio"]:checked {
+input[type="checkbox"]:checked {
     background-color: black;
 }
 
