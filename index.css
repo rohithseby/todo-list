@@ -270,7 +270,7 @@ body {
     cursor: pointer;
 }
 
-.task-details {
+.task-details-bottom {
     display: inline-flex;
     margin: 10px 20px 20px 0;
     background-color: transparent;

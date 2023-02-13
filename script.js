@@ -43,9 +43,8 @@ getTasksObject = () => {
             }
         }
     }
-    let todoObject = JSON.stringify(tasksObject);
-    console.log(tasksObject)
-    localStorage.setItem('todoObject', todoObject);
+    let todoObject = JSON.stringify(tasksObject)
+    localStorage.setItem('todoObject', todoObject)
     innerHTML = tasksContainer.innerHTML
 }
 
@@ -56,9 +55,9 @@ handleAddTaskClick = () => {
                     <input type = "checkbox" id = "task-${taskCounter}-checkbox" class="task-checkbox task-details" />
                     <input type="text" placeholder="Task name" id="task-${taskCounter}-task" class="task-content task-details">
                     <div id="task-${taskCounter}-details" class="task-details-container">
-                        <input type="date" id="task-${taskCounter}-date" class="task-details task-day">
-                        <input type="time" id="task-${taskCounter}-time" class="task-details task-time">
-                        <select name="category-dropdown" id="task-${taskCounter}-category-dropdown" class="task-details task-category">
+                        <input type="date" id="task-${taskCounter}-date" class="task-details task-day task-details-bottom">
+                        <input type="time" id="task-${taskCounter}-time" class="task-details task-time task-details-bottom">
+                        <select name="category-dropdown" id="task-${taskCounter}-category-dropdown" class="task-details task-details-bottom task-category">
                             <option value="personal">Personal</option>
                             <option value="work">Work</option>
                         </select>
@@ -66,7 +65,9 @@ handleAddTaskClick = () => {
                 </div>`
     currentInnerHTML = tasksContainer.innerHTML
     tasksContainer.innerHTML = currentInnerHTML + taskHTML
-    document.querySelector(".task-details").addEventListener("change", getTasksObject)
+    for (let task_detail of document.querySelectorAll(".task-details")) {
+        task_detail.addEventListener("change", getTasksObject)
+    }
     updateInfo()
     correctIDs()
     getTasksObject()
