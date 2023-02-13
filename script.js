@@ -11,50 +11,50 @@ let tasksInfo = {}
 updateInfo = () => {
     tasksContainer = document.querySelector("#tasks-container")
     tasksContainerChildren = Array.from(tasksContainer.children);
-    taskCheckboxIDs = tasksContainerChildren.map(element => { return Array.from(element.children)[0].id });
     taskIDs = tasksContainerChildren.map(element => { return element.id });
+    taskCheckboxIDs = tasksContainerChildren.map(element => { return Array.from(element.children)[0].id })
 }
 
 getTasksObject = () => {
     updateInfo()
-    tasksObject = {}
-    if (taskCheckboxIDs.length === taskIDs.length && taskIDs.length > 0) {
-        for (let i = 1; i <= taskIDs.length; i++) {
-            currentTaskChildren = document.getElementById(taskIDs[i - 1]).children
-            tasksObject[`task${i}`] = {
-                checkmark: {
-                    id: currentTaskChildren[0].id,
-                    value: currentTaskChildren[0].value
-                },
-                taskContent: {
-                    id: currentTaskChildren[1].id,
-                    value: currentTaskChildren[1].value
-                },
-                date: {
-                    id: currentTaskChildren[2].children[0].id,
-                    value: currentTaskChildren[2].children[0].value
-                },
-                time: {
-                    id: currentTaskChildren[2].children[1].id,
-                    value: currentTaskChildren[2].children[1].value
-                },
-                category: {
-                    id: currentTaskChildren[2].children[2].id,
-                    value: currentTaskChildren[2].children[2].value
-                }
+    tasksObject = new Object()
+    for (let i = 1; i <= taskIDs.length; i++) {
+        currentTaskChildren = document.getElementById(taskIDs[i - 1]).children
+        tasksObject[`task${i}`] = {
+            checkmark: {
+                id: currentTaskChildren[0].id,
+                value: currentTaskChildren[0].value
+            },
+            taskContent: {
+                id: currentTaskChildren[1].id,
+                value: currentTaskChildren[1].value
+            },
+            date: {
+                id: currentTaskChildren[2].children[0].id,
+                value: currentTaskChildren[2].children[0].value
+            },
+            time: {
+                id: currentTaskChildren[2].children[1].id,
+                value: currentTaskChildren[2].children[1].value
+            },
+            category: {
+                id: currentTaskChildren[2].children[2].id,
+                value: currentTaskChildren[2].children[2].value
             }
         }
-        let todoObject = JSON.stringify(tasksObject);
-        localStorage.setItem('todoObject', todoObject);
     }
+    let todoObject = JSON.stringify(tasksObject);
+    console.log(tasksObject)
+    localStorage.setItem('todoObject', todoObject);
     innerHTML = tasksContainer.innerHTML
 }
+
 
 handleAddTaskClick = () => {
     taskCounter = taskCounter + 1
     taskHTML = `<div id="task-${taskCounter}" class="task-container">
-                    <input type = "checkbox" id = "task-${taskCounter}-checkbox" class="task-checkbox" />
-                    <input type="text" placeholder="Task name" id="task-${taskCounter}-task" class="task-content">
+                    <input type = "checkbox" id = "task-${taskCounter}-checkbox" class="task-checkbox task-details" />
+                    <input type="text" placeholder="Task name" id="task-${taskCounter}-task" class="task-content task-details">
                     <div id="task-${taskCounter}-details" class="task-details-container">
                         <input type="date" id="task-${taskCounter}-date" class="task-details task-day">
                         <input type="time" id="task-${taskCounter}-time" class="task-details task-time">
@@ -66,6 +66,7 @@ handleAddTaskClick = () => {
                 </div>`
     currentInnerHTML = tasksContainer.innerHTML
     tasksContainer.innerHTML = currentInnerHTML + taskHTML
+    document.querySelector(".task-details").addEventListener("change", getTasksObject)
     updateInfo()
     correctIDs()
     getTasksObject()
@@ -80,6 +81,7 @@ handleDeleteButtonClick = () => {
     }
     updateInfo()
     correctIDs()
+    getTasksObject()
 }
 
 correctIDs = () => {
@@ -102,6 +104,7 @@ loadToDoObject = () => {
     if (localStorage.getItem("todoObject")) {
         tasksObject = JSON.parse(localStorage.getItem("todoObject"))
         populateToDoList(Object.keys(tasksObject).length)
+        console.log(Object.keys(tasksObject).length)
     }
 }
 
@@ -113,11 +116,9 @@ populateToDoList = (length) => {
 
 loadToDoObject()
 
-setInterval(getTasksObject, 10);
+// setInterval(getTasksObject, 10);
 
-saveTaskObject = () => { }
 
 addTaskButton.addEventListener('click', handleAddTaskClick)
 
 deleteTasksButton.addEventListener("click", handleDeleteButtonClick)
-
