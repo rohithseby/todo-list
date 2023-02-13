@@ -21,10 +21,6 @@ getTasksObject = () => {
     for (let i = 1; i <= taskIDs.length; i++) {
         currentTaskChildren = document.getElementById(taskIDs[i - 1]).children
         tasksObject[`task${i}`] = {
-            checkmark: {
-                id: currentTaskChildren[0].id,
-                value: currentTaskChildren[0].value
-            },
             taskContent: {
                 id: currentTaskChildren[1].id,
                 value: currentTaskChildren[1].value
@@ -118,7 +114,6 @@ populateToDoList = (length) => {
 loadToDoObject()
 
 // setInterval(getTasksObject, 10);
-
 
 addTaskButton.addEventListener('click', handleAddTaskClick)
 
